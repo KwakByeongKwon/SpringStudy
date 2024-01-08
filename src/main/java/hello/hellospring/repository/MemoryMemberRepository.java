@@ -56,4 +56,10 @@ public class MemoryMemberRepository implements MemberRepository{
         return new ArrayList<>(store.values());
         // 새로운 리스트를 생성하여 store 의 values 즉 멤버들을 반환해줍니다.
     }
+
+
+    public void clearStore(){
+        store.clear();
+        // 이러면 톨을 싹 비워줍니다.
+    }
 }
