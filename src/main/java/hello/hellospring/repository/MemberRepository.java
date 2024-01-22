@@ -1,6 +1,7 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,4 +18,6 @@ public interface MemberRepository {
 
     List<Member> findAll();
     // 지금까지 저장된 모든 리스트를 반환해줍니다.
+
+    void clearStore();
 }

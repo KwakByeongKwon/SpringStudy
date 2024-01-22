@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+
 @Controller // 컨트롤러는 스프링에서 @Controller 어노테이션을 적어야한다.
 public class HelloController {
 

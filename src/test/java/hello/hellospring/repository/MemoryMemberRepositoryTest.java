@@ -1,6 +1,6 @@
 package hello.hellospring.repository;
 
-import hello.hellospring.domain.Member;
+import  hello.hellospring.domain.Member;
 //import org.junit.jupiter.api.Assertions; 과거에 사용했던 Assertions
 
 import org.assertj.core.api.Assertions;
@@ -12,9 +12,10 @@ import java.util.Optional;
 
 public class MemoryMemberRepositoryTest {
 
-    MemoryMemberRepository repository = new MemoryMemberRepository();
+    MemberRepository repository = new MemoryMemberRepository();
 
     /*
+    @AfterEach
     각 테스트 메서드들이 실행이 끝날때마다 정해놓은 메서드가 실행이 됩니다.
      */
     @AfterEach
@@ -28,7 +29,8 @@ public class MemoryMemberRepositoryTest {
     @Test
     public void save(){
         Member member = new Member();
-        member.setName("Spring");
+        member.setName("spring");
+
         repository.save(member);
         Member result = repository.findById(member.getId()).get();
         /*
@@ -85,7 +87,6 @@ public class MemoryMemberRepositoryTest {
         repository.save(member2);
 
         List<Member> result = repository.findAll();
-
         Assertions.assertThat(result.size()).isEqualTo(2);
 
     }

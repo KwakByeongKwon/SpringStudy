@@ -3,6 +3,8 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +21,6 @@ public class MemberService {
      */
 
     private final MemberRepository memberRepository;
-
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -35,10 +36,10 @@ public class MemberService {
      */
     public Long join(Member member){
 
-//        Optional<Member> result = memberRepository.findByName(member.getName());
-//        result.ifPresent(m -> {
-//            throw new IllegalStateException("이미 존재하는 회원입니다.");
-//        });
+//        memberRepository.findByName(member.getName())
+//                .ifPresent(m -> {
+//                    throw new IllegalStateException("이미 존재하는 회원입니다.");
+//                });
         /*
         result에서 값을 result.get() 으로 바로 꺼낼 수도 있지만, java에서 별로 권장하지 않고
         만약에 값이 있으면 이라는 .ifPresent 로 throw 로 에러처리를 해줍니다.
